@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -48,17 +49,25 @@ function decrypt(pwd) {
 </head>
 <body>
 <section id="mainsection">
+		<div class="name">
+			<c:if test="${nowait != null }">
+    		<p style="font-size: 12px; font-family: sans-serif; margin-right: 10px; float: right;">
+    		${nowait.cust_name}님 환영합니다.
+    		</p>
+    		</c:if>
+   		</div>
 			<header>
-				<a href="/main"> <img src="${path}/resources/images/logo2.png"
+				<a href="/first"> <img src="${path}/resources/images/logo2.png"
 					alt="My Image" width="200" height="150">
 				</a>
 			</header>
 			<nav>
 				<ul class="nav-1">
-					<li class="nav-item1"><a href="/login">Login</a></li>
-					<li class="nav-item1"><a href="">My Page</a></li>
+             	  	<li class="nav-item1"> <c:if test="${nowait != null}"><a href="/logout">Logout</a></c:if></li>
+               		<li class="nav-item1"> <c:if test="${nowait == null}"><a href="/login">Login</a></c:if></li>
+					<li class="nav-item1"><a href="/mypage">My Page</a></li>
 					<li class="nav-item1"><a href="/signup">Join</a></li>
-					<li class="nav-item1"><a href="">QnA</a></li>
+					<li class="nav-item1"><a href="/faq">FAQ</a></li>
 				</ul>
 			</nav>
 			<nav>

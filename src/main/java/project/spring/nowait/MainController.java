@@ -1,6 +1,7 @@
 package project.spring.nowait;
 
 
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,15 +17,9 @@ public class MainController {
 @Autowired
 MainService mainService;
 
-/*
-@Autowired
-SignupService signService;
-*/
 
-	//@RequestMapping(value="/detail", method = RequestMethod.GET)
-	//public ModelAndView Detail() {
-	//    return new ModelAndView("nowait/detail/ms_ph_detail");
-	//}
+
+
 	@RequestMapping(value="/main", method = RequestMethod.GET)
 	public ModelAndView Main() {
 	    return new ModelAndView("nowait/main");
@@ -32,6 +27,18 @@ SignupService signService;
 	@RequestMapping(value="/recommend", method = RequestMethod.GET)
 	public ModelAndView Recommend() {
 	    return new ModelAndView("nowait/recommend");
+	}
+	@RequestMapping(value="/first", method = RequestMethod.GET)
+	public ModelAndView First() {
+	    return new ModelAndView("nowait/first");
+	}
+	@RequestMapping(value="/rev", method = RequestMethod.GET)
+	public ModelAndView Rev() {
+	    return new ModelAndView("nowait/rev");
+	}
+	@RequestMapping(value="/sale", method = RequestMethod.GET)
+	public ModelAndView Sale() {
+	    return new ModelAndView("nowait/sale");
 	}
 	@RequestMapping(value="/qna", method = RequestMethod.GET)
 	public ModelAndView Qna() {
@@ -45,122 +52,11 @@ SignupService signService;
 	public ModelAndView Write() {
 	    return new ModelAndView("nowait/write");
 	}
-	@RequestMapping(value="/first", method = RequestMethod.GET)
-	public ModelAndView First() {
-	    return new ModelAndView("nowait/first");
+	@RequestMapping(value="/faq", method = RequestMethod.GET)
+	public ModelAndView Faq() {
+	    return new ModelAndView("nowait/faq");
 	}
-	@RequestMapping(value="/rev", method = RequestMethod.GET)
-	public ModelAndView Rev() {
-	    return new ModelAndView("nowait/rev");
-	}
-	//@RequestMapping(value="/rv", method = RequestMethod.GET)
-	//public ModelAndView Rv() {
-	    //return new ModelAndView("nowait/rv");
-	//}
-	//@RequestMapping(value="/rvcf", method = RequestMethod.GET)
-	//public ModelAndView Rvcf() {
-	    //return new ModelAndView("nowait/rvcf");
-	//}
-	@RequestMapping(value="/sale", method = RequestMethod.GET)
-	public ModelAndView Sale() {
-	    return new ModelAndView("nowait/sale");
-	}
-	@RequestMapping(value="/popgd", method = RequestMethod.GET)
-	public ModelAndView Popgd() {
-	    return new ModelAndView("nowait/rev/popgd");
-	}
-	@RequestMapping(value="/popsp", method = RequestMethod.GET)
-	public ModelAndView Popsp() {
-	    return new ModelAndView("nowait/rev/popsp");
-	}
-	@RequestMapping(value="/pophn", method = RequestMethod.GET)
-	public ModelAndView Pophn() {
-	    return new ModelAndView("nowait/rev/pophn");
-	}
-	@RequestMapping(value="/hofgd", method = RequestMethod.GET)
-	public ModelAndView Hofgd() {
-	    return new ModelAndView("nowait/rev/hofgd");
-	}
-	@RequestMapping(value="/hofsp", method = RequestMethod.GET)
-	public ModelAndView Hofsp() {
-	    return new ModelAndView("nowait/rev/hofsp");
-	}
-	@RequestMapping(value="/hofhn", method = RequestMethod.GET)
-	public ModelAndView Hofhn() {
-	    return new ModelAndView("nowait/rev/hofhn");
-	}
-	@RequestMapping(value="/korgd", method = RequestMethod.GET)
-	public ModelAndView Korgd() {
-	    return new ModelAndView("nowait/rev/korgd");
-	}
-	@RequestMapping(value="/korsp", method = RequestMethod.GET)
-	public ModelAndView Korsp() {
-	    return new ModelAndView("nowait/rev/korsp");
-	}
-	@RequestMapping(value="/korhn", method = RequestMethod.GET)
-	public ModelAndView Korhn() {
-	    return new ModelAndView("nowait/rev/korhn");
-	}
-	@RequestMapping(value="/usagd", method = RequestMethod.GET)
-	public ModelAndView Usagd() {
-	    return new ModelAndView("nowait/rev/usagd");
-	}
-	@RequestMapping(value="/usasp", method = RequestMethod.GET)
-	public ModelAndView Usasp() {
-	    return new ModelAndView("nowait/rev/usasp");
-	}
-	@RequestMapping(value="/usahn", method = RequestMethod.GET)
-	public ModelAndView Usahn() {
-	    return new ModelAndView("nowait/rev/usahn");
-	}
-	@RequestMapping(value="/jpgd", method = RequestMethod.GET)
-	public ModelAndView Jpgd() {
-	    return new ModelAndView("nowait/rev/jpgd");
-	}
-	@RequestMapping(value="/jpsp", method = RequestMethod.GET)
-	public ModelAndView Jpsp() {
-	    return new ModelAndView("nowait/rev/jpsp");
-	}
-	@RequestMapping(value="/jphn", method = RequestMethod.GET)
-	public ModelAndView Jphn() {
-	    return new ModelAndView("nowait/rev/jphn");
-	}
-	@RequestMapping(value="/chgd", method = RequestMethod.GET)
-	public ModelAndView Chgd() {
-	    return new ModelAndView("nowait/rev/chgd");
-	}
-	@RequestMapping(value="/chsp", method = RequestMethod.GET)
-	public ModelAndView Chsp() {
-	    return new ModelAndView("nowait/rev/chsp");
-	}
-	@RequestMapping(value="/chhn", method = RequestMethod.GET)
-	public ModelAndView Chhn() {
-	    return new ModelAndView("nowait/rev/chhn");
-	}
-	@RequestMapping(value="/recjs", method = RequestMethod.GET)
-	public ModelAndView Recjs() {
-	    return new ModelAndView("nowait/rec/recjs");
-	}
-	@RequestMapping(value="/recch", method = RequestMethod.GET)
-	public ModelAndView Recch() {
-	    return new ModelAndView("nowait/rec/recch");
-	}
-	@RequestMapping(value="/recms", method = RequestMethod.GET)
-	public ModelAndView Recms() {
-	    return new ModelAndView("nowait/rec/recms");
-	}
-	@RequestMapping(value="/salech", method = RequestMethod.GET)
-	public ModelAndView Salech() {
-	    return new ModelAndView("nowait/sale/salech");
-	}
-	@RequestMapping(value="/salejs", method = RequestMethod.GET)
-	public ModelAndView Salejs() {
-	    return new ModelAndView("nowait/sale/salejs");
-	}
-	@RequestMapping(value="/salems", method = RequestMethod.GET)
-	public ModelAndView Salems() {
-	    return new ModelAndView("nowait/sale/salems");
-	}
+
 
 	@RequestMapping(value = "/detail", method = RequestMethod.GET)
 	public ModelAndView detail(@RequestParam Map<String, Object> map) {
@@ -171,6 +67,18 @@ SignupService signService;
 	    String resId = map.get("resId").toString();
 	    mav.addObject("resId", resId);
 	    mav.setViewName("/nowait/detail");
+	    return mav;
+	}
+	
+	@RequestMapping(value = "/detailmenu", method = RequestMethod.GET)
+	public ModelAndView detailMenu(@RequestParam Map<String, Object> map) {
+	    Map<String, Object> detailMap = this.mainService.detail(map);
+
+	    ModelAndView mav = new ModelAndView();
+	    mav.addObject("data", detailMap);
+	    String resId = map.get("resId").toString();
+	    mav.addObject("resId", resId);
+	    mav.setViewName("/nowait/detailmenu");
 	    return mav;
 	}
 	
@@ -211,6 +119,338 @@ SignupService signService;
 	    return mav;
 	}
 	
+	@RequestMapping(value = "/rvc", method = RequestMethod.POST)  
+	public ModelAndView deleteRv(@RequestParam Map<String, Object> map) {  
+	ModelAndView mav = new ModelAndView();  
+
+	boolean isDeleteSuccess = this.mainService.removeRv(map);  
+	if (isDeleteSuccess) {  
+	mav.setViewName("redirect:/rev");  
+	}else {  
+	String rvId = map.get("rvId").toString();  
+	mav.setViewName("redirect:/rvcf?rvId=" + rvId);  
+	}  
+
+	return mav;  
+	}  
+	
+	@RequestMapping(value = "/num", method = RequestMethod.GET)
+	public ModelAndView numName(@RequestParam Map<String, Object> map) {
+	    Map<String, Object> nameMap = this.mainService.name2(map);
+
+	    ModelAndView mav = new ModelAndView();
+	    mav.addObject("data", nameMap);
+	    String resId = map.get("resId").toString();
+	    mav.addObject("resId", resId);
+	    mav.setViewName("/nowait/num");
+	    return mav;
+	}
+	
+	@RequestMapping(value = "/num", method = RequestMethod.POST)
+	public ModelAndView numPost(@RequestParam Map<String, Object> map) {
+		ModelAndView mav = new ModelAndView();
+
+	    String numId = this.mainService.insertNum(map);
+	    if (numId == null) {
+	        mav.setViewName("redirect:/num");
+	    }else {
+	        mav.setViewName("redirect:/numcf?numId=" + numId); 
+	    }  
+	    return mav;
+	}
+	
+	@RequestMapping(value = "/numcf", method = RequestMethod.GET)
+	public ModelAndView num(@RequestParam Map<String, Object> map) {
+	    Map<String, Object> numMap = this.mainService.num(map);
+
+	    ModelAndView mav = new ModelAndView();
+	    mav.addObject("numData", numMap);
+	    String numId = map.get("numId").toString();
+	    mav.addObject("numId", numId);
+	    mav.setViewName("/nowait/numcf");
+	    return mav;
+	}
+	
+	@RequestMapping(value = "/numc", method = RequestMethod.POST)  
+	public ModelAndView deleteNum(@RequestParam Map<String, Object> map) {  
+	ModelAndView mav = new ModelAndView();  
+
+	boolean isDeleteSuccess = this.mainService.removeNum(map);  
+	if (isDeleteSuccess) {  
+	mav.setViewName("redirect:/rev");  
+	}else {  
+	String numId = map.get("numId").toString();  
+	mav.setViewName("redirect:/numcf?numId=" + numId);
+	}  
+
+	return mav;  
+	}  
+	
+	@RequestMapping(value = "/popgd", method = RequestMethod.GET)
+	public ModelAndView listPopCh(@RequestParam Map<String, Object> map) {  
+
+	List<Map<String, Object>> list = this.mainService.listPopCh(map);  
+
+	ModelAndView mav = new ModelAndView();  
+	mav.addObject("data", list);  
+	mav.setViewName("/nowait/rev/popgd");
+	return mav;  
+	}
+	
+	@RequestMapping(value = "/popsp", method = RequestMethod.GET)
+	public ModelAndView listPopJs(@RequestParam Map<String, Object> map) {  
+
+	List<Map<String, Object>> list = this.mainService.listPopJs(map);  
+
+	ModelAndView mav = new ModelAndView();  
+	mav.addObject("data", list);  
+	mav.setViewName("/nowait/rev/popsp");
+	return mav;  
+	}
+	
+	@RequestMapping(value = "/pophn", method = RequestMethod.GET)
+	public ModelAndView listPopHn(@RequestParam Map<String, Object> map) {  
+
+	List<Map<String, Object>> list = this.mainService.listPopHn(map);  
+
+	ModelAndView mav = new ModelAndView();  
+	mav.addObject("data", list);  
+	mav.setViewName("/nowait/rev/pophn");
+	return mav;  
+	}
+	
+	@RequestMapping(value = "/korgd", method = RequestMethod.GET)
+	public ModelAndView listKorCh(@RequestParam Map<String, Object> map) {  
+
+	List<Map<String, Object>> list = this.mainService.listKorCh(map);  
+
+	ModelAndView mav = new ModelAndView();  
+	mav.addObject("data", list);  
+	mav.setViewName("/nowait/rev/korgd");
+	return mav;  
+	}
+	
+	@RequestMapping(value = "/korsp", method = RequestMethod.GET)
+	public ModelAndView listKorJs(@RequestParam Map<String, Object> map) {  
+
+	List<Map<String, Object>> list = this.mainService.listKorJs(map);  
+
+	ModelAndView mav = new ModelAndView();  
+	mav.addObject("data", list);  
+	mav.setViewName("/nowait/rev/korsp");
+	return mav;  
+	}
+	
+	@RequestMapping(value = "/korhn", method = RequestMethod.GET)
+	public ModelAndView listKorHn(@RequestParam Map<String, Object> map) {  
+
+	List<Map<String, Object>> list = this.mainService.listKorHn(map);  
+
+	ModelAndView mav = new ModelAndView();  
+	mav.addObject("data", list);  
+	mav.setViewName("/nowait/rev/korhn");
+	return mav;  
+	}
+	
+	@RequestMapping(value = "/usagd", method = RequestMethod.GET)
+	public ModelAndView listUsaCh(@RequestParam Map<String, Object> map) {  
+
+	List<Map<String, Object>> list = this.mainService.listUsaCh(map);  
+
+	ModelAndView mav = new ModelAndView();  
+	mav.addObject("data", list);  
+	mav.setViewName("/nowait/rev/usagd");
+	return mav;  
+	}
+	
+	@RequestMapping(value = "/usasp", method = RequestMethod.GET)
+	public ModelAndView listUsaJs(@RequestParam Map<String, Object> map) {  
+
+	List<Map<String, Object>> list = this.mainService.listUsaJs(map);  
+
+	ModelAndView mav = new ModelAndView();  
+	mav.addObject("data", list);  
+	mav.setViewName("/nowait/rev/usasp");
+	return mav;  
+	}
+	
+	@RequestMapping(value = "/usahn", method = RequestMethod.GET)
+	public ModelAndView listUsaHn(@RequestParam Map<String, Object> map) {  
+
+	List<Map<String, Object>> list = this.mainService.listUsaHn(map);  
+
+	ModelAndView mav = new ModelAndView();  
+	mav.addObject("data", list);  
+	mav.setViewName("/nowait/rev/usahn");
+	return mav;  
+	}
+	
+	@RequestMapping(value = "/chgd", method = RequestMethod.GET)
+	public ModelAndView listChCh(@RequestParam Map<String, Object> map) {  
+
+	List<Map<String, Object>> list = this.mainService.listChCh(map);  
+
+	ModelAndView mav = new ModelAndView();  
+	mav.addObject("data", list);  
+	mav.setViewName("/nowait/rev/chgd");
+	return mav;  
+	}
+	
+	@RequestMapping(value = "/chsp", method = RequestMethod.GET)
+	public ModelAndView listChJs(@RequestParam Map<String, Object> map) {  
+
+	List<Map<String, Object>> list = this.mainService.listChJs(map);  
+
+	ModelAndView mav = new ModelAndView();  
+	mav.addObject("data", list);  
+	mav.setViewName("/nowait/rev/chsp");
+	return mav;  
+	}
+	
+	@RequestMapping(value = "/chhn", method = RequestMethod.GET)
+	public ModelAndView listChHn(@RequestParam Map<String, Object> map) {  
+
+	List<Map<String, Object>> list = this.mainService.listChHn(map);  
+
+	ModelAndView mav = new ModelAndView();  
+	mav.addObject("data", list);  
+	mav.setViewName("/nowait/rev/chhn");
+	return mav;  
+	}
+	
+	@RequestMapping(value = "/jpgd", method = RequestMethod.GET)
+	public ModelAndView listJpCh(@RequestParam Map<String, Object> map) {  
+
+	List<Map<String, Object>> list = this.mainService.listJpCh(map);  
+
+	ModelAndView mav = new ModelAndView();  
+	mav.addObject("data", list);  
+	mav.setViewName("/nowait/rev/jpgd");
+	return mav;  
+	}
+	
+	@RequestMapping(value = "/jpsp", method = RequestMethod.GET)
+	public ModelAndView listJpJs(@RequestParam Map<String, Object> map) {  
+
+	List<Map<String, Object>> list = this.mainService.listJpJs(map);  
+
+	ModelAndView mav = new ModelAndView();  
+	mav.addObject("data", list);  
+	mav.setViewName("/nowait/rev/jpsp");
+	return mav;  
+	}
+	
+	@RequestMapping(value = "/jphn", method = RequestMethod.GET)
+	public ModelAndView listJpHn(@RequestParam Map<String, Object> map) {  
+
+	List<Map<String, Object>> list = this.mainService.listJpHn(map);  
+
+	ModelAndView mav = new ModelAndView();  
+	mav.addObject("data", list);  
+	mav.setViewName("/nowait/rev/jphn");
+	return mav;  
+	}
+	
+	@RequestMapping(value = "/hofgd", method = RequestMethod.GET)
+	public ModelAndView listHofCh(@RequestParam Map<String, Object> map) {  
+
+	List<Map<String, Object>> list = this.mainService.listHofCh(map);  
+
+	ModelAndView mav = new ModelAndView();  
+	mav.addObject("data", list);  
+	mav.setViewName("/nowait/rev/hofgd");
+	return mav;  
+	}
+	
+	@RequestMapping(value = "/hofsp", method = RequestMethod.GET)
+	public ModelAndView listHofJs(@RequestParam Map<String, Object> map) {  
+
+	List<Map<String, Object>> list = this.mainService.listHofJs(map);  
+
+	ModelAndView mav = new ModelAndView();  
+	mav.addObject("data", list);  
+	mav.setViewName("/nowait/rev/hofsp");
+	return mav;  
+	}
+	
+	@RequestMapping(value = "/hofhn", method = RequestMethod.GET)
+	public ModelAndView listHofHn(@RequestParam Map<String, Object> map) {  
+
+	List<Map<String, Object>> list = this.mainService.listHofHn(map);  
+
+	ModelAndView mav = new ModelAndView();  
+	mav.addObject("data", list);  
+	mav.setViewName("/nowait/rev/hofhn");
+	return mav;  
+	}
+	
+	@RequestMapping(value = "/recch", method = RequestMethod.GET)
+	public ModelAndView listRecCh(@RequestParam Map<String, Object> map) {  
+
+	List<Map<String, Object>> list = this.mainService.listRecCh(map);  
+
+	ModelAndView mav = new ModelAndView();  
+	mav.addObject("data", list);  
+	mav.setViewName("/nowait/rec/recch");
+	return mav;  
+	}
+	
+	@RequestMapping(value = "/recjs", method = RequestMethod.GET)
+	public ModelAndView listRecJs(@RequestParam Map<String, Object> map) {  
+
+	List<Map<String, Object>> list = this.mainService.listRecJs(map);  
+
+	ModelAndView mav = new ModelAndView();  
+	mav.addObject("data", list);  
+	mav.setViewName("/nowait/rec/recjs");
+	return mav;  
+	}
+	
+	@RequestMapping(value = "/recms", method = RequestMethod.GET)
+	public ModelAndView listRecHn(@RequestParam Map<String, Object> map) {  
+
+	List<Map<String, Object>> list = this.mainService.listRecHn(map);  
+
+	ModelAndView mav = new ModelAndView();  
+	mav.addObject("data", list);  
+	mav.setViewName("/nowait/rec/recms");
+	return mav;  
+	}
+	
+	@RequestMapping(value = "/salech", method = RequestMethod.GET)
+	public ModelAndView listSaleCh(@RequestParam Map<String, Object> map) {  
+
+	List<Map<String, Object>> list = this.mainService.listSaleCh(map);  
+
+	ModelAndView mav = new ModelAndView();  
+	mav.addObject("data", list);  
+	mav.setViewName("/nowait/sale/salech");
+	return mav;  
+	}
+	
+	@RequestMapping(value = "/salejs", method = RequestMethod.GET)
+	public ModelAndView listSaleJs(@RequestParam Map<String, Object> map) {  
+
+	List<Map<String, Object>> list = this.mainService.listSaleJs(map);  
+
+	ModelAndView mav = new ModelAndView();  
+	mav.addObject("data", list);  
+	mav.setViewName("/nowait/sale/salejs");
+	return mav;  
+	}
+	
+	@RequestMapping(value = "/salems", method = RequestMethod.GET)
+	public ModelAndView listSaleHn(@RequestParam Map<String, Object> map) {  
+
+	List<Map<String, Object>> list = this.mainService.listSaleHn(map);  
+
+	ModelAndView mav = new ModelAndView();  
+	mav.addObject("data", list);  
+	mav.setViewName("/nowait/sale/salems");
+	return mav;  
+	}
+	
+	
 	/*
 	@RequestMapping(value="/signup", method = RequestMethod.GET)
 	public ModelAndView signup() {
@@ -237,3 +477,5 @@ SignupService signService;
 	*/
 	
 }
+
+
